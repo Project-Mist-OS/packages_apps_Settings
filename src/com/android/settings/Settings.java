@@ -534,6 +534,8 @@ public class Settings extends SettingsActivity {
      */
     public static class PreviouslyConnectedDevicesActivity extends SettingsActivity { /* empty */ }
 
-   // MistLab Additoon
+   // MistLab Activity Fragment
     public static class MistLabActivity extends SettingsActivity {}
+
+    public static class DevRunningServicesActivity extends SettingsActivity { /* empty */ }
 }
