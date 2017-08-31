@@ -298,7 +298,7 @@
     <!-- Summary for Wellbeing screen time usage. [CHAR LIMIT=NONE] -->
     <string name="screen_time_summary_usage_today">%1$s today</string>
 
-    <string name="about_cherish_device">Cherish Device</string>
+    <string name="about_cherish_device">Mist Device</string>
 
     <!-- IME button space -->
     <string name="navigation_bar_ime_space_title">Hide IME button space</string>
@@ -392,4 +392,8 @@
 
     <!-- Display settings screen, peak refresh rate settings summary [CHAR LIMIT=NONE] -->
     <string name="peak_refresh_rate_summary_custom">Automatically raises the refresh rate from 60 to %1$d Hz for some content. Increases battery usage.</string>
+
+    <!--mist Settings-->
+    <string name="mist_settings_title">Mistfy</string>
+    <string name="mist_settings_summary">Happiness is not available and it comes from your own actions</string>
 </resources>

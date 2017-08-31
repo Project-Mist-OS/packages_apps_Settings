@@ -33,6 +33,15 @@
         android:order="-170" />
 
     <com.android.settings.widget.HomepagePreference
+        android:key="top_level_mist"
+        android:title="@string/mist_settings_title"
+        android:summary="@string/mist_settings_summary"
+        android:icon="@drawable/ic_mist"
+        android:order="-160"
+        android:fragment="com.mist.settings.Mistfy"
+	settings:highlightableMenuKey="@string/menu_key_mist"/>
+
+    <com.android.settings.widget.HomepagePreference
         android:fragment="com.android.settings.network.NetworkDashboardFragment"
         android:icon="@drawable/ic_settings_wireless"
         android:key="top_level_network"
@@ -70,7 +79,7 @@
         android:title="@string/apps_dashboard_title"
         android:summary="@string/app_and_notification_dashboard_summary"
         settings:highlightableMenuKey="@string/menu_key_apps"/>
-
+		
     <com.android.settings.widget.HomepagePreference
         android:fragment="com.android.settings.notification.ConfigureNotificationSettings"
         android:icon="@drawable/ic_notifications"
