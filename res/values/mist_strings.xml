@@ -79,6 +79,8 @@
 
      <!-- Mist Lab -->
      <string name="mist_lab_dash_title">Mist Lab</string>
-     <string name="mist_lab_summary">Get High AF</string>
+
+    <!-- Density category -->
+    <string name="density_category">Density options</string>
 
 </resources>
