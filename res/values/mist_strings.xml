@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright 2022-2023 The MistOS Project
-
-     Licensed under the Apache License, Version 2.0 (the "License");
-     you may not use this file except in compliance with the License.
-     You may obtain a copy of the License at
-
-          http://www.apache.org/licenses/LICENSE-2.0
-
-     Unless required by applicable law or agreed to in writing, software
-     distributed under the License is distributed on an "AS IS" BASIS,
-     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-     See the License for the specific language governing permissions and
-     limitations under the License.
+     Copyright (C) 2022-2023 The MistOS Project
+     SPDX-License-Identifier: Apache-2.0
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
@@ -150,5 +139,19 @@
 
      <!-- Screenshot shutter -->
      <string name="screenshot_shutter_sound_title">Screenshot sound</string>
+
+     <!-- Proximity wake -->
+     <string name="proximity_wake_title">Prevent accidental wake-up</string>
+     <string name="proximity_wake_summary">Check the proximity sensor prior to waking up screen</string>
+
+     <!-- Navbar options -->
+     <string name="navbar_invert_layout_title">Invert navigation bar layout</string>
+     <string name="navbar_invert_info">Swap the \"Back\" and \"Recents\" buttons on the navigation
+          bar</string>
+
+     <!-- Torch Power button gestures -->
+     <string name="power_button_torch_title">Quick torch</string>
+     <string name="power_button_torch_summary">When the screen is off, long-pressing power button
+          will enable torch</string>
 
 </resources>
