@@ -141,4 +141,11 @@
 
      <!-- Summary for the top level wallpapers settings [CHAR LIMIT=NONE]-->
      <string name="wallpaper_dashboard_custom_summary">Colors, themed icons, app grid</string>
+
+     <!-- About phone screen, setting option name [CHAR LIMIT=40] -->
+     <string name="selinux_status">SELinux status</string>
+     <string name="selinux_status_disabled">Disabled</string> 
+     <string name="selinux_status_permissive">Permissive</string>
+     <string name="selinux_status_enforcing">Enforcing</string>
+
 </resources>
