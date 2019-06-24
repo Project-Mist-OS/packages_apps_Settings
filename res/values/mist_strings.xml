@@ -14,4 +14,10 @@
     <string name="maintainer">Maintainer</string>
     <string name="maintainer_name" translatable="false">Unknown</string>
     <string name="maintainer_telegram" translatable="false">https://t.me/MistOSUpdate</string>
+
+    <!-- Private DNS -->
+    <string name="private_dns_mode_cloudflare" translatable="false">Cloudflare DNS</string>
+    <!-- Alternative: 1dot1dot1dot1.cloudflare-dns.com -->
+    <string name="private_dns_hostname_cloudflare" translatable="false">one.one.one.one</string>
+
 </resources>
