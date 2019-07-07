@@ -192,6 +192,8 @@ import com.android.settings.wifi.p2p.WifiP2pSettings;
 import com.android.settings.wifi.savedaccesspoints2.SavedAccessPointsWifiSettings2;
 import com.android.settings.wifi.tether.WifiTetherSettings;
 
+import com.mist.settings.fragments.SmartPixels;
+
 public class SettingsGateway {
 
     /**
@@ -371,7 +373,8 @@ public class SettingsGateway {
             NfcAndPaymentFragment.class.getName(),
             ColorAndMotionFragment.class.getName(),
             LongBackgroundTasksDetails.class.getName(),
-            RegionalPreferencesEntriesFragment.class.getName()
+            RegionalPreferencesEntriesFragment.class.getName(),
+            SmartPixels.class.getName(),
     };
 
     public static final String[] SETTINGS_FOR_RESTRICTED = {
@@ -420,5 +423,6 @@ public class SettingsGateway {
             Settings.NavigationModeSettingsActivity.class.getName(),
             Settings.FirmwareVersionActivity.class.getName(),
             Settings.WallpaperSettingsActivity.class.getName(),
+            Settings.SmartPixelsActivity.class.getName(),
     };
 }
