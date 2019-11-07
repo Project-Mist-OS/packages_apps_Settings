@@ -25,4 +25,8 @@
     <!-- Ignore secure window -->
     <string name="ignore_window_secure_title">Ignore window secure flags</string>
     <string name="ignore_window_secure_summary">This removes screenshot and screenrecord limits for all applications but may lead to privacy leaks. After toggling, you may need to restart your apps.</string>
+
+    <!-- Three-fingers-swipe to screenshot -->
+    <string name="three_finger_gesture">Swipe to screenshot</string>
+    <string name="three_finger_gesture_summary">Swipe down with three fingers to take a screenshot</string>
 </resources>
