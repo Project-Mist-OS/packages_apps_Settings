@@ -81,7 +81,6 @@
     <com.android.settings.widget.HomepagePreference
         android:key="top_level_mist_lab"
         android:title="@string/mist_lab_dash_title"
-        android:summary="@string/mist_lab_summary"
         android:icon="@drawable/ic_settings_mist"
         android:order="-110"
         android:fragment="com.mist.lab.MistLab"/>
