@@ -5,7 +5,8 @@
 -->
 <resources>
 
-    <!-- Whether to show peak refresh rate in display settings -->
+    <!-- Whether to show min/max refresh rate in display settings -->
+    <bool name="config_show_min_refresh_rate_switch">false</bool>
     <bool name="config_show_peak_refresh_rate_switch">false</bool>
 
 </resources>
