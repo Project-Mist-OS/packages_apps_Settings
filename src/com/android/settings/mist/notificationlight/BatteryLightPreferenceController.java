@@ -14,24 +14,24 @@
  * limitations under the License.
  */
 
-package com.android.settings.cherish.livedisplay;
+package com.android.settings.mist.notificationlight;
 
 import android.content.Context;
 import com.android.settings.core.BasePreferenceController;
 
-public class LiveDisplayController extends BasePreferenceController {
+public class BatteryLightPreferenceController extends BasePreferenceController {
 
-    public static final String KEY = "livedisplay";
+    public static final String KEY = "battery_lights";
 
     private Context mContext;
 
-    public LiveDisplayController(Context context, String key) {
+    public BatteryLightPreferenceController(Context context, String key) {
         super(context, key);
 
         mContext = context;
     }
 
-    public LiveDisplayController(Context context) {
+    public BatteryLightPreferenceController(Context context) {
         this(context, KEY);
 
         mContext = context;
@@ -39,8 +39,8 @@ public class LiveDisplayController extends BasePreferenceController {
 
     @Override
     public int getAvailabilityStatus() {
-        boolean exists = mContext.getResources().getBoolean(com.android.internal.R.bool.config_enableLiveDisplay);
-        return (exists ? AVAILABLE : UNSUPPORTED_ON_DEVICE);
+        int caps = mContext.getResources().getInteger(com.android.internal.R.integer.config_deviceLightCapabilities);
+        return (((caps & 64) == 64) ? AVAILABLE : UNSUPPORTED_ON_DEVICE);
     }
 
 }
