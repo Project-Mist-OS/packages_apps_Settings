@@ -505,4 +505,7 @@ public class Settings extends SettingsActivity {
 
     public static class SmartPixelsActivity extends SettingsActivity {}
     public static class DevRunningServicesActivity extends SettingsActivity { /* empty */ }
+
+    // SleepMode
+    public static class SleepModeActivity extends SettingsActivity {}
 }
