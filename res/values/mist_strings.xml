@@ -14,6 +14,16 @@
     <string name="maintainer">Maintainer</string>
     <string name="maintainer_name" translatable="false">Unknown</string>
     <string name="maintainer_telegram" translatable="false">https://t.me/MistOSUpdate</string>
+	
+	<!-- About phone screen, Mist OS version -->
+    <string name="mist_version">MistOS version</string>
+    <string name="mist_version_default">Unknown</string>
+    <string name="keywords_mist_version">MistOS version, mist version</string>
+
+    <!-- About phone screen, build date -->
+    <string name="build_date">Build date</string>
+    <string name="build_date_default">2015-01-01-0000</string>
+    <string name="keywords_build_date">build date, build info</string>
 
     <!-- Private DNS -->
     <string name="private_dns_mode_cloudflare" translatable="false">Cloudflare DNS</string>
