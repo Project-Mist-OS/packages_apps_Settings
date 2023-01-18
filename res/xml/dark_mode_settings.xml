@@ -35,13 +35,19 @@
         android:title="@string/twilight_mode_location_off_dialog_message"
         settings:controller="com.android.settings.display.TwilightLocationPreferenceController"/>
 
+    <com.tequila.support.preferences.SecureSettingSwitchPreference
+        android:key="system_black_theme"
+        android:title="@string/system_black_theme_title"
+        android:summary="@string/system_black_theme_summary"
+        android:dependency="dark_ui_activated"
+        android:defaultValue="false" />
+
     <ListPreference
         android:key="dark_ui_auto_mode"
         android:title="@string/dark_ui_auto_mode_title"
         android:summary="%s"
         android:entries="@array/dark_ui_scheduler_preference_titles"
         android:entryValues="@array/dark_ui_scheduler_preference_titles"
-        settings:allowDividerAbove="true"
         settings:controller="com.android.settings.display.darkmode.DarkModeScheduleSelectorController"
         settings:keywords="@string/keywords_dark_ui_mode"/>
 
