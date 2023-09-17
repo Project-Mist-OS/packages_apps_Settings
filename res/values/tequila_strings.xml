@@ -21,4 +21,8 @@
     <!-- Black theme -->
     <string name="system_black_theme_title">Use black theme</string>
     <string name="system_black_theme_summary">Force black background colors</string>
+
+    <!-- Ignore secure window -->
+    <string name="ignore_window_secure_title">Ignore window secure flags</string>
+    <string name="ignore_window_secure_summary">This removes screenshot and screenrecord limits for all applications but may lead to privacy leaks. After toggling, you may need to restart your apps.</string>
 </resources>
