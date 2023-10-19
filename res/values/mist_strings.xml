@@ -57,4 +57,5 @@
     <!-- Platform version -->
     <string name="platform_version">Platform version</string>
 
+     <string name="about_cherish_device">Mist Device</string>
 </resources>
