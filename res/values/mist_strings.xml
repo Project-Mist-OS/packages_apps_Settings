@@ -55,4 +55,7 @@
     <!-- Quad9 DNS hostname -->
     <string name="private_dns_hostname_quad9" translatable="false">dns.quad9.net</string>
 
+    <!-- Platform version -->
+    <string name="platform_version">Platform version</string>
+
 </resources>
