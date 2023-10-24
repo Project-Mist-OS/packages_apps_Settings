@@ -9,4 +9,7 @@
     <string name="mist_version">MistOS version</string>
     <string name="mist_version_default">Unknown</string>
 
+    <!-- Platform version -->
+    <string name="platform_version">Platform version</string>
+
 </resources>
