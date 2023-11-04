@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019 ArrowOS
+ * Copyright (C) 2019-2021 crDroid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,7 +17,15 @@
 package com.android.settings.deviceinfo.firmwareversion;
 
 import android.content.Context;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
+import android.os.Build;
 import android.os.SystemProperties;
+import android.text.TextUtils;
+import android.util.Log;
+
+import androidx.preference.Preference;
 
 import com.android.settings.R;
 import com.android.settings.core.BasePreferenceController;
@@ -26,7 +34,8 @@ public class AboutDeviceNamePreferenceController extends BasePreferenceControlle
 
     private static final String TAG = "AboutDeviceNameCtrl";
 
-    private static final String KEY_DEVICE_NAME_PROP = "ro.mist.device";
+    private static final String KEY_BRAND_NAME_PROP = "ro.product.manufacturer";
+    private static final String KEY_DEVICE_STATUS_PROP = "org.mist.build_type";
 
     public AboutDeviceNamePreferenceController(Context context, String key) {
         super(context, key);
@@ -39,7 +48,11 @@ public class AboutDeviceNamePreferenceController extends BasePreferenceControlle
 
     @Override
     public CharSequence getSummary() {
-        return SystemProperties.get(KEY_DEVICE_NAME_PROP,
-                mContext.getString(R.string.unknown));
+        String deviceBrand = SystemProperties.get(KEY_BRAND_NAME_PROP,
+                mContext.getString(R.string.device_info_default));
+        String deviceStatus = SystemProperties.get(KEY_DEVICE_STATUS_PROP,
+                mContext.getString(R.string.device_info_default));
+        String deviceModel = Build.MODEL;
+        return deviceBrand + " | " + deviceModel + " | " + deviceStatus;
     }
 }
