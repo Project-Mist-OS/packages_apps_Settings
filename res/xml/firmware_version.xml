@@ -25,6 +25,7 @@
     <com.android.settingslib.widget.LayoutPreference
         android:key="mist_logo"
         android:layout="@layout/mist_logo"
+        android:selectable="false"/>
 
     <!-- Android version -->
     <Preference
@@ -34,6 +35,13 @@
         settings:enableCopying="true"
         settings:searchable="false"
         settings:controller="com.android.settings.deviceinfo.firmwareversion.FirmwareVersionDetailPreferenceController"/>
+
+    <!-- MistOS maintainer -->
+    <Preference
+        android:key="maintainer"
+        android:title="@string/maintainer"
+        android:summary="@string/maintainer_name"
+        settings:enableCopying="true" />
 
     <!-- Security patch -->
     <Preference
