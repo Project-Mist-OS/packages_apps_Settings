@@ -13,5 +13,5 @@
 	<!-- MistOS maintainer -->
     <string name="maintainer">Maintainer</string>
     <string name="maintainer_name" translatable="false">Unknown</string>
-
+    <string name="maintainer_telegram" translatable="false">https://t.me/MistOSUpdate</string>
 </resources>
