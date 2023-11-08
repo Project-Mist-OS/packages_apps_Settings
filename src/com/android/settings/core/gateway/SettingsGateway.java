@@ -196,6 +196,8 @@ import com.mist.settings.fragments.SmartPixels;
 
 import ink.kscope.settings.wifi.tether.WifiTetherClientManager;
 
+import com.google.android.settings.security.SecurityHubDashboard;
+
 public class SettingsGateway {
 
     /**
@@ -376,6 +378,7 @@ public class SettingsGateway {
             ColorAndMotionFragment.class.getName(),
             LongBackgroundTasksDetails.class.getName(),
             RegionalPreferencesEntriesFragment.class.getName(),
+            SecurityHubDashboard.class.getName(),
             SmartPixels.class.getName(),
             WifiTetherClientManager.class.getName()
     };
