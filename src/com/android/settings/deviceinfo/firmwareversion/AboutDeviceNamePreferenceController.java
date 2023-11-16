@@ -35,7 +35,7 @@ public class AboutDeviceNamePreferenceController extends BasePreferenceControlle
     private static final String TAG = "AboutDeviceNameCtrl";
 
     private static final String KEY_BRAND_NAME_PROP = "ro.product.manufacturer";
-    private static final String KEY_DEVICE_STATUS_PROP = "org.mist.build_type";
+    private static final String KEY_DEVICE_STATUS_PROP = "ro.mist.build_type";
 
     public AboutDeviceNamePreferenceController(Context context, String key) {
         super(context, key);
