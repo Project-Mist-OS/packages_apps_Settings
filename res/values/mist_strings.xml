@@ -18,7 +18,6 @@
 	<!-- About phone screen, Mist OS version -->
     <string name="mist_version">MistOS version</string>
     <string name="mist_version_default">Unknown</string>
-    <string name="keywords_mist_version">MistOS version, mist version</string>
 
     <!-- About phone screen, build date -->
     <string name="about_device_name">Device | Model</string>
