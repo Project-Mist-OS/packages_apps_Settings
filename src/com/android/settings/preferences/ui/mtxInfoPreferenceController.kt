@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023 the CherishOS Android Project
+ * Copyright (C) 2023 the mistOS Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,57 +47,53 @@ class mtxInfoPreferenceController(context: Context) : AbstractPreferenceControll
         return "${Build.MANUFACTURER} ${Build.MODEL}"
     }
 
-    private fun getCherishBuildVersion(): String {
-        return getPropertyOrDefault(PROP_CHERISH_BUILD_VERSION)
+    private fun getMistBuildVersion(): String {
+        return getPropertyOrDefault(PROP_MIST_BUILD_VERSION)
     }
 
-    private fun getCherishStorage(): String {
-        return SystemProperties.get(PROP_CHERISH_RAM, "0gb") + "/" + SystemProperties.get(PROP_CHERISH_STORAGE, "0gb")
+    private fun getMistChipset(): String {
+        return getPropertyOrDefault(PROP_MIST_CHIPSET)
     }
 
-    private fun getCherishChipset(): String {
-        return getPropertyOrDefault(PROP_CHERISH_CHIPSET)
-    }
-
-    private fun getCherishBattery(): String {
-        return getPropertyOrDefault(PROP_CHERISH_BATTERY)
+    private fun getMistBattery(): String {
+        return getPropertyOrDefault(PROP_MIST_BATTERY)
     }
     
-    private fun getCherishResolution(): String {
-        return getPropertyOrDefault(PROP_CHERISH_DISPLAY)
+    private fun getMistResolution(): String {
+        return getPropertyOrDefault(PROP_MIST_DISPLAY)
     }
 
-    private fun getCherishSecurity(): String {
-        return getPropertyOrDefault(PROP_CHERISH_SECURITY)
+    private fun getMistSecurity(): String {
+        return getPropertyOrDefault(PROP_MIST_SECURITY)
     }
 
-    private fun getCherishVersion(): String {
-        return SystemProperties.get(PROP_CHERISH_VERSION)
+    private fun getMistVersion(): String {
+        return SystemProperties.get(PROP_MIST_VERSION)
     }
 
-    private fun getCherishReleaseType(): String {
-        val releaseType = getPropertyOrDefault(PROP_CHERISH_RELEASETYPE)
+    private fun getMistReleaseType(): String {
+        val releaseType = getPropertyOrDefault(PROP_MIST_RELEASETYPE)
         return releaseType.substring(0, 1).uppercase() +
                releaseType.substring(1).lowercase()
     }
 
-    private fun getCherishBuildStatus(releaseType: String): String {
+    private fun getMistBuildStatus(releaseType: String): String {
         return mContext.getString(if (releaseType == "official") R.string.build_is_official_title else R.string.build_is_community_title)
     }
 
-    private fun getCherishMaintainer(releaseType: String): String {
-        val cherishMaintainer = getPropertyOrDefault(PROP_CHERISH_MAINTAINER)
-        if (cherishMaintainer.equals("Unknown", ignoreCase = true)) {
+    private fun getMistMaintainer(releaseType: String): String {
+        val mistMaintainer = getPropertyOrDefault(PROP_MIST_MAINTAINER)
+        if (mistMaintainer.equals("Unknown", ignoreCase = true)) {
             return mContext.getString(R.string.unknown_maintainer)
         }
-        return mContext.getString(R.string.maintainer_summary, cherishMaintainer)
+        return mContext.getString(R.string.maintainer_summary, mistMaintainer)
     }
 
     override fun displayPreference(screen: PreferenceScreen) {
         super.displayPreference(screen)
 
-        val releaseType = getPropertyOrDefault(PROP_CHERISH_RELEASETYPE).lowercase()
-        val cherishMaintainer = getCherishMaintainer(releaseType)
+        val releaseType = getPropertyOrDefault(PROP_MIST_RELEASETYPE).lowercase()
+        val mistMaintainer = getMistMaintainer(releaseType)
         val isOfficial = releaseType == "OFFICIAL"
         
         val hwInfoPreference = screen.findPreference<LayoutPreference>(KEY_HW_INFO)!!
@@ -110,17 +106,16 @@ class mtxInfoPreferenceController(context: Context) : AbstractPreferenceControll
         val blurView: View = hwInfoPreference.findViewById(R.id.blurView)
 
         deviceInfoPreference.apply {
-            findViewById<TextView>(R.id.firmware_version).text = "Cherish" + " " + getCherishVersion()
-            findViewById<TextView>(R.id.firmware_build_summary).text = cherishMaintainer
-            findViewById<TextView>(R.id.build_variant_title).text = getCherishBuildStatus(releaseType)
+            findViewById<TextView>(R.id.firmware_version).text = "Mist" + " " + getMistVersion()
+            findViewById<TextView>(R.id.firmware_build_summary).text = mistMaintainer
+            findViewById<TextView>(R.id.build_variant_title).text = getMistBuildStatus(releaseType)
         }
 
         hwInfoPreference.apply {
             findViewById<TextView>(R.id.device_name).text = getDeviceName()
-            findViewById<TextView>(R.id.device_chipset).text = getCherishChipset()
-            findViewById<TextView>(R.id.device_storage).text = getCherishStorage()
-            findViewById<TextView>(R.id.device_battery_capacity).text = getCherishBattery()
-            findViewById<TextView>(R.id.device_resolution).text = getCherishResolution()
+            findViewById<TextView>(R.id.device_chipset).text = getMistChipset()
+            findViewById<TextView>(R.id.device_battery_capacity).text = getMistBattery()
+            findViewById<TextView>(R.id.device_resolution).text = getMistResolution()
             findViewById<TextView>(R.id.device_name_model).text = getDeviceName()
         }
 
@@ -141,7 +136,7 @@ class mtxInfoPreferenceController(context: Context) : AbstractPreferenceControll
         }
         
         sw2InfoPreference.apply {
-            findViewById<TextView>(R.id.security_patch_summary).text = getCherishSecurity()
+            findViewById<TextView>(R.id.security_patch_summary).text = getMistSecurity()
             findViewById<TextView>(R.id.kernel_info_summary).text = DeviceInfoUtils.getFormattedKernelVersion(mContext)
         }
 
@@ -149,7 +144,6 @@ class mtxInfoPreferenceController(context: Context) : AbstractPreferenceControll
             R.id.android_version_details to Intent().setComponent(ComponentName("com.android.settings", "com.android.settings.Settings\$FirmwareVersionActivity"))
            // R.id.chipset_info to Intent().setComponent(ComponentName("com.android.settings", "com.android.settings.Settings\$DevRunningServicesActivity")),
           //  R.id.display_info to Intent().setComponent(ComponentName("com.android.settings", "com.android.settings.Settings\$DisplaySettingsActivity")),
-           // R.id.storage_info to Intent().setComponent(ComponentName("com.android.settings", "com.android.settings.Settings\$StorageDashboardActivity"))
        )
 
         clickMap.forEach { (id, intent) ->
@@ -173,22 +167,20 @@ class mtxInfoPreferenceController(context: Context) : AbstractPreferenceControll
         private const val KEY_SW2_INFO = "my_device_sw2_header"
         private const val KEY_DEVICE_INFO = "my_device_info_header"
         
-        private const val KEY_STORAGE = "device_storage"
         private const val KEY_CHIPSET = "device_chipset"
         private const val KEY_BATTERY = "device_battery_capacity"
         private const val KEY_DISPLAY = "device_resolution"
 
-        private const val PROP_CHERISH_VERSION = "ro.cherish.version"
-        private const val PROP_CHERISH_RELEASETYPE = "ro.cherish.build_type"
-        private const val PROP_CHERISH_MAINTAINER = "ro.cherish.maintainer"
-        private const val PROP_CHERISH_DEVICE = "ro.cherish.device"
-        private const val PROP_CHERISH_BUILD_TYPE = "ro.cherish.build_type"
-        private const val PROP_CHERISH_BUILD_VERSION = "ro.cherish.version"
-        private const val PROP_CHERISH_CHIPSET = "ro.cherish.chipset"
-        private const val PROP_CHERISH_STORAGE = "ro.cherish.storage"
-        private const val PROP_CHERISH_RAM = "ro.cherish.ram"
-        private const val PROP_CHERISH_BATTERY = "ro.cherish.battery"
-        private const val PROP_CHERISH_DISPLAY = "ro.cherish.display_resolution"
-        private const val PROP_CHERISH_SECURITY = "ro.build.version.security_patch"
+        private const val PROP_MIST_VERSION = "ro.mist.version"
+        private const val PROP_MIST_RELEASETYPE = "ro.mist.build_type"
+        private const val PROP_MIST_MAINTAINER = "ro.mist.maintainer"
+        private const val PROP_MIST_DEVICE = "ro.mist.device"
+        private const val PROP_MIST_BUILD_TYPE = "ro.mist.build_type"
+        private const val PROP_MIST_BUILD_VERSION = "ro.mist.version"
+        private const val PROP_MIST_CHIPSET = "ro.mist.chipset"
+        private const val PROP_MIST_STORAGE = "ro.mist.storage"
+        private const val PROP_MIST_BATTERY = "ro.mist.battery"
+        private const val PROP_MIST_DISPLAY = "ro.mist.display_resolution"
+        private const val PROP_MIST_SECURITY = "ro.build.version.security_patch"
     }
 }
