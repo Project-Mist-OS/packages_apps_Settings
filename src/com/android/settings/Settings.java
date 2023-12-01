@@ -533,4 +533,7 @@ public class Settings extends SettingsActivity {
      * Activity for PreviouslyConnectedDeviceDashboardFragment
      */
     public static class PreviouslyConnectedDevicesActivity extends SettingsActivity { /* empty */ }
+
+   // MistLab Additoon
+    public static class MistLabActivity extends SettingsActivity {}
 }

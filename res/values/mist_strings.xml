@@ -76,4 +76,9 @@
 
      <!-- Summary for list to control apps that ignore battery saving restrictions -->
      <string name="high_power_apps_summary">Battery optimization availability</string>
+
+     <!-- Mist Lab -->
+     <string name="mist_lab_dash_title">Mist Lab</string>
+     <string name="mist_lab_summary">Get High AF</string>
+
 </resources>
