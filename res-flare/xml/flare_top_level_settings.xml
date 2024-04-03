@@ -21,6 +21,7 @@
         android:key="top_level_about_device"
         android:order="-205"
         android:title="@string/flare_dashboard_device"
+	android:icon="@drawable/ic_settings_about_device"
         android:summary="@string/summary_placeholder"
         settings:layout="@layout/flare_dashboard_preference_phone"
         android:fragment="com.android.settings.deviceinfo.aboutphone.MyDeviceInfoFragment"
@@ -38,6 +39,7 @@
         android:order="-190"
         android:summary="@string/summary_placeholder"
         android:title="@string/network_dashboard_title"
+        android:icon="@drawable/ic_settings_wireless"
         android:fragment="com.android.settings.network.NetworkDashboardFragment"
         settings:layout="@layout/flare_dashboard_preference_top"
         settings:controller="com.android.settings.network.TopLevelNetworkEntryPreferenceController" />
@@ -47,6 +49,7 @@
         android:order="-180"
         android:summary="@string/connected_devices_dashboard_default_summary"
         android:title="@string/connected_devices_dashboard_title"
+        android:icon="@drawable/ic_devices_other"
         android:fragment="com.android.settings.connecteddevice.ConnectedDeviceDashboardFragment"
         settings:layout="@layout/flare_dashboard_preference_bottom"
         settings:controller="com.android.settings.connecteddevice.TopLevelConnectedDevicesPreferenceController" />
@@ -60,18 +63,29 @@
 
     <Preference
         android:key="top_level_display"
-        android:order="-109"
+        android:order="-110"
         android:summary="@string/display_dashboard_summary"
         android:title="@string/display_settings"
+        android:icon="@drawable/ic_settings_display_white"
         android:fragment="com.android.settings.DisplaySettings"
         settings:controller="com.android.settings.display.TopLevelDisplayPreferenceController"
         settings:layout="@layout/flare_dashboard_preference_top"/>
+
+    <com.android.settings.widget.RestrictedHomepagePreference
+        android:icon="@drawable/ic_settings_wallpaper_white"
+        android:key="top_level_wallpaper"
+        android:order="-109"
+        android:title="@string/wallpaper_settings_title"
+        android:summary="@string/wallpaper_dashboard_summary"
+        settings:controller="com.android.settings.display.TopLevelWallpaperPreferenceController"
+        settings:layout="@layout/flare_dashboard_preference_middle"/>
 
     <Preference
         android:key="top_level_sound"
         android:order="-108"
         android:summary="@string/sound_dashboard_summary"
         android:title="@string/sound_settings"
+	android:icon="@drawable/ic_volume_up_24dp"
         settings:layout="@layout/flare_dashboard_preference_middle"
         android:fragment="com.android.settings.notification.SoundSettings"/>
 
@@ -80,6 +94,7 @@
         android:order="-107"
         android:summary="@string/summary_placeholder"
         android:title="@string/power_usage_summary_title"
+        android:icon="@drawable/ic_settings_battery_white"
         settings:controller="com.android.settings.fuelgauge.TopLevelBatteryPreferenceController"
         settings:layout="@layout/flare_dashboard_preference_middle"
         android:fragment="com.android.settings.fuelgauge.batteryusage.PowerUsageSummary"/>
@@ -89,6 +104,7 @@
         android:order="-106"
         android:title="@string/configure_notification_settings"
         android:summary="@string/notification_dashboard_summary"
+        android:icon="@drawable/ic_notifications"
         settings:layout="@layout/flare_dashboard_preference_middle"
         android:fragment="com.android.settings.notification.ConfigureNotificationSettings"/>
 
@@ -97,6 +113,7 @@
         android:order="-105"
         android:summary="@string/app_and_notification_dashboard_summary"
         android:title="@string/apps_dashboard_title"
+        android:icon="@drawable/ic_apps"
         settings:layout="@layout/flare_dashboard_preference_bottom"
         android:fragment="com.android.settings.applications.AppDashboardFragment"/>
 
@@ -108,18 +125,20 @@
         settings:enabled="false" />
 
     <Preference
-        android:key="top_level_privacy"
+        android:key="top_level_safety_center"
         android:order="-99"
-        android:summary="@string/privacy_dashboard_summary"
-        android:title="@string/privacy_dashboard_title"
+        android:summary="@string/safety_center_summary"
+        android:title="@string/safety_center_title"
+        android:icon="@drawable/ic_settings_safety_center"
         settings:layout="@layout/flare_dashboard_preference_top"
-        android:fragment="com.android.settings.privacy.PrivacyDashboardFragment"/>
+        settings:controller="com.android.settings.safetycenter.TopLevelSafetyCenterEntryPreferenceController"/>
 
     <Preference
         android:key="top_level_security"
         android:order="-98"
         android:summary="@string/security_dashboard_summary"
         android:title="@string/security_settings_title"
+        android:icon="@drawable/ic_settings_security_white"
         settings:layout="@layout/flare_dashboard_preference_middle"
         android:fragment="com.android.settings.security.SecuritySettings"
         settings:controller="com.android.settings.security.TopLevelSecurityEntryPreferenceController"/>
@@ -129,15 +148,26 @@
         android:order="-97"
         android:summary="@string/location_settings_loading_app_permission_stats"
         android:title="@string/location_settings_title"
+        android:icon="@drawable/ic_settings_location"
         settings:controller="com.android.settings.location.TopLevelLocationPreferenceController"
         settings:layout="@layout/flare_dashboard_preference_middle"
         android:fragment="com.android.settings.location.LocationSettings"/>
 
     <Preference
-        android:key="top_level_accounts"
+        android:key="top_level_emergency"
         android:order="-96"
+        android:summary="@string/emergency_dashboard_summary"
+        android:title="@string/emergency_settings_preference_title"
+	android:icon="@drawable/ic_settings_emergency"
+        settings:layout="@layout/flare_dashboard_preference_middle"
+        android:fragment="com.android.settings.emergency.EmergencyDashboardFragment"/>
+
+    <Preference
+        android:key="top_level_accounts"
+        android:order="-95"
         android:summary="@string/summary_placeholder"
         android:title="@string/account_dashboard_title"
+        android:icon="@drawable/ic_settings_accounts"
         settings:layout="@layout/flare_dashboard_preference_bottom"
         settings:controller="com.android.settings.accounts.TopLevelAccountEntryPreferenceController" 
         android:fragment="com.android.settings.accounts.AccountDashboardFragment"/>
@@ -154,6 +184,7 @@
         android:order="-20"
         android:summary="@string/accessibility_settings_summary"
         android:title="@string/accessibility_settings"
+        android:icon="@drawable/ic_settings_accessibility"
         settings:layout="@layout/flare_dashboard_preference_top"
         android:fragment="com.android.settings.accessibility.AccessibilitySettings"
         settings:controller="com.android.settings.accessibility.TopLevelAccessibilityPreferenceController" />
@@ -163,6 +194,7 @@
         android:order="-11"
         android:summary="@string/summary_placeholder"
         android:title="@string/storage_settings"
+        android:icon="@drawable/ic_storage_white"
         settings:layout="@layout/flare_dashboard_preference_middle"
         android:fragment="com.android.settings.deviceinfo.StorageDashboardFragment"
         settings:controller="com.android.settings.deviceinfo.TopLevelStoragePreferenceController" />
@@ -172,6 +204,7 @@
         android:order="10"
         android:summary="@string/support_summary"
         android:title="@string/page_tab_title_support"
+        android:icon="@drawable/ic_help"
         settings:layout="@layout/flare_dashboard_preference_middle"
         settings:controller="com.android.settings.support.SupportPreferenceController"/>
 
@@ -180,6 +213,7 @@
         android:order="20"
         android:summary="@string/system_dashboard_summary"
         android:title="@string/header_category_system"
+        android:icon="@drawable/ic_settings_system_dashboard_white"
         settings:layout="@layout/flare_dashboard_preference_bottom"
         android:fragment="com.android.settings.system.SystemDashboardFragment"/>
 

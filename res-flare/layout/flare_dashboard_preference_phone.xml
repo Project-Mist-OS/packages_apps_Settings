@@ -15,7 +15,6 @@
          app:cardCornerRadius="28dp"
          app:strokeColor="?android:attr/textColorPrimary"
          app:strokeWidth="3dp">
-
         <com.com.mist.utils.WallpaperBlurView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
