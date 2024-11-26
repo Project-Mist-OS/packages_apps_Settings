@@ -25,6 +25,7 @@ import android.content.Context;
 import android.content.res.Configuration;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.os.SystemProperties;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -89,7 +90,7 @@ public class TopLevelSettings extends DashboardFragment implements SplitLayoutLi
 
     @Override
     protected int getPreferenceScreenResId() {
-        return R.xml.flare_top_level_settings;
+        return SystemProperties.getBoolean("persist.sys.settings.revamp_ui", false) ? R.xml.top_level_settings_v2 : R.xml.flare_top_level_settings;
     }
 
     @Override
@@ -213,6 +214,9 @@ public class TopLevelSettings extends DashboardFragment implements SplitLayoutLi
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
         super.onCreatePreferences(savedInstanceState, rootKey);
+	if (SystemProperties.getBoolean("persist.sys.settings.revamp_ui", false)) {
+            return;
+        }
 	final PreferenceScreen screen = getPreferenceScreen();
 	for (int i = 0; i < screen.getPreferenceCount(); i++) {
             Preference pref = screen.getPreference(i);
@@ -352,7 +356,7 @@ public class TopLevelSettings extends DashboardFragment implements SplitLayoutLi
             return mHighlightMixin.onCreateAdapter(this, preferenceScreen, mScrollNeeded);
         }
 
-        if (Flags.homepageRevamp()) {
+        if (SystemProperties.getBoolean("persist.sys.settings.revamp_ui", false)) {
             return new RoundCornerPreferenceAdapter(preferenceScreen);
         }
         return super.onCreateAdapter(preferenceScreen);
@@ -401,7 +405,10 @@ public class TopLevelSettings extends DashboardFragment implements SplitLayoutLi
     }
 
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
-            new BaseSearchIndexProvider(R.xml.flare_top_level_settings) {
+            new BaseSearchIndexProvider(
+                    SystemProperties.getBoolean("persist.sys.settings.revamp_ui", false)
+                            ? R.xml.top_level_settings_v2
+                            : R.xml.flare_top_level_settings) {
 
                 @Override
                 protected boolean isPageSearchEnabled(Context context) {

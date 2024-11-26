@@ -18,6 +18,7 @@ package com.android.settings.core;
 
 import android.os.Handler;
 import android.os.Looper;
+import android.os.SystemProperties;
 import android.view.View;
 
 import androidx.annotation.DrawableRes;
@@ -70,7 +71,7 @@ public class RoundCornerPreferenceAdapter extends PreferenceGroupAdapter {
     @Override
     public void onBindViewHolder(@NonNull PreferenceViewHolder holder, int position) {
         super.onBindViewHolder(holder, position);
-        if (Flags.homepageRevamp()) {
+        if (SystemProperties.getBoolean("persist.sys.settings.revamp_ui", false)) {
             updateBackground(holder, position);
         }
     }
@@ -105,7 +106,7 @@ public class RoundCornerPreferenceAdapter extends PreferenceGroupAdapter {
 
     @SuppressWarnings("WeakerAccess") /* synthetic access */
     private void updatePreferences() {
-        if (Flags.homepageRevamp()) {
+        if (SystemProperties.getBoolean("persist.sys.settings.revamp_ui", false)) {
             mRoundCornerMappingList = new ArrayList<>();
             mappingPreferenceGroup(mRoundCornerMappingList, mPreferenceGroup);
         }

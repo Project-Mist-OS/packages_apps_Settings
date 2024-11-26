@@ -18,6 +18,7 @@ package com.android.settings.widget;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
+import android.os.SystemProperties;
 import android.text.TextUtils;
 import android.util.Log;
 import android.util.SparseArray;
@@ -231,7 +232,7 @@ public class HighlightableTopLevelPreferenceAdapter extends RoundCornerPreferenc
 
     private void addHighlightBackground(PreferenceViewHolder holder, int position) {
         final View v = holder.itemView;
-        if (Flags.homepageRevamp()) {
+        if (SystemProperties.getBoolean("persist.sys.settings.revamp_ui", false)) {
             @DrawableRes int bgRes = getRoundCornerDrawableRes(position, true /*isSelected*/);
             v.setBackgroundResource(bgRes);
         } else {
@@ -247,7 +248,7 @@ public class HighlightableTopLevelPreferenceAdapter extends RoundCornerPreferenc
 
     private void removeHighlightBackground(PreferenceViewHolder holder, int position) {
         final View v = holder.itemView;
-        if (Flags.homepageRevamp()) {
+        if (SystemProperties.getBoolean("persist.sys.settings.revamp_ui", false)) {
             @DrawableRes int bgRes = getRoundCornerDrawableRes(position, false /*isSelected*/);
             v.setBackgroundResource(bgRes);
         } else {
