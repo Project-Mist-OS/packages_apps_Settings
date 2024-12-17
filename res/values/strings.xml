@@ -13588,4 +13588,13 @@
 
     <!-- url for learning more about bluetooth audio sharing -->
     <string name="help_url_audio_sharing" translatable="false"></string>
+
+    <!-- Dashboard categories -->
+    <string name="top_level_connectivity">Connectivity</string>
+    <string name="top_level_mistify">Mistify</string>
+    <string name="top_level_personalize">Personalize</string>
+    <string name="top_level_security" translatable="false">Security</string>
+    <string name="top_level_system">System</string>
+    <string name="top_level_info">Information</string>
+
 </resources>
