@@ -16,6 +16,8 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
+    <string name="top_header_device_name">Device Name</string>
+
     <!-- About phone screen, Mist OS version -->
     <string name="mist_version">MistOS version</string>
     <string name="mist_version_default">Unknown</string>

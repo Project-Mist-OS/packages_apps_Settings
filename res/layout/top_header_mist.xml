@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/about_device_banner"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:layout_marginStart="@dimen/card_margin_start_aqua"
+        android:layout_marginEnd="@dimen/card_margin_end_aqua"
+        android:clickable="true"
+        android:layout_marginBottom="20dp"
+        app:cardBackgroundColor="#000000"
+        app:cardElevation="0dp"
+        app:cardCornerRadius="30dp">
+
+        <com.mist.utils.BlurWallpaperView
+            android:id="@+id/gradient_wallpaper"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            app:blurred="true"/>
+
+
+        <FrameLayout
+            android:id="@+id/device_info"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/firmware_info_card"
+            android:layout_width="120dp"
+            android:layout_height="90dp"
+            android:layout_marginStart="30dp"
+            android:layout_weight="1"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="0dp"
+            app:cardBackgroundColor="@android:color/transparent"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical"
+            android:layout_gravity=""
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:id="@+id/device_name_tittle"
+                android:layout_width="110dp"
+                android:layout_height="20dp"
+                android:layout_gravity=""
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"
+                android:gravity="start"
+                android:text="@string/top_header_device_name"
+                android:textColor="@color/op_control_text_color_primary"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/device_summery"
+                android:layout_width="110dp"
+                android:layout_height="20dp"
+                android:layout_gravity=""
+                android:layout_marginTop="35dp"
+                android:gravity="start"
+                android:layout_marginBottom="20dp"
+                android:textColor="@color/op_control_text_color_secondary"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/device_codename"
+                android:layout_width="110dp"
+                android:layout_height="20dp"
+                android:layout_gravity=""
+                android:layout_marginTop="60dp"
+                android:gravity="start"
+                android:layout_marginBottom="20dp"
+                android:textColor="@color/op_control_text_color_secondary"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+
+        </androidx.cardview.widget.CardView>
+
+        </FrameLayout>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="4dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            app:cardCornerRadius="3dp"
+            app:cardElevation="6dp"
+            android:backgroundTint="@color/user_crd_bg" />
+
+        <FrameLayout
+            android:id="@+id/device_preview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <FrameLayout
+                    android:id="@+id/phone_frame"
+                    android:layout_marginStart="20dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:gravity="center_horizontal|bottom">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/phone_image"
+                        android:layout_width="140dp"
+                        android:layout_height="180dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginStart="10dp"
+                        app:cardElevation="0dp"
+                        app:cardCornerRadius="20dp"
+                        app:strokeColor="#000000"
+                        app:strokeWidth="3dp">
+
+                        <com.android.settings.utils.WallpaperView
+                            android:layout_width="140dp"
+                            android:layout_height="match_parent"
+                            android:contentDescription="@null"
+                            android:elevation="0dp"
+                            android:gravity="bottom"
+                            android:orientation="vertical"
+                            android:scaleType="centerCrop" />
+                    </com.google.android.material.card.MaterialCardView>
+
+                </FrameLayout>
+
+            </RelativeLayout>
+        </FrameLayout>
+    </com.google.android.material.card.MaterialCardView>
+</RelativeLayout>
