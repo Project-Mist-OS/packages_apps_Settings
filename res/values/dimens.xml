@@ -502,4 +502,6 @@
     <dimen name="zen_mode_icon_list_item_size">96dp</dimen>
     <dimen name="zen_mode_icon_list_circle_diameter">56dp</dimen>
     <dimen name="zen_mode_icon_list_icon_size">32dp</dimen>
+
+    <dimen name="card_radius">20dp</dimen>
 </resources>

@@ -29,15 +29,23 @@
              android:selectable="false" />
 
         <com.android.settingslib.widget.LayoutPreference
-            android:key="my_device_hw_header"
+            android:key="mist_top_header"
             android:order="-998"
-            android:layout="@layout/about_device_info_hw"
+            android:layout="@layout/top_header_mist"
+            android:selectable="false"
+            settings:controller="com.android.settings.deviceinfo.firmwareversion.controller.FirmwareHeaderPreferenceController"
+            settings:isPreferenceVisible="true"/>
+
+        <com.android.settingslib.widget.LayoutPreference
+            android:key="my_device_hw_header"
+            android:order="-997"
+            android:layout="@layout/mist_device_info_hw"
             android:selectable="false"
             settings:isPreferenceVisible="true"/>
 
         <com.android.settingslib.widget.LayoutPreference
             android:key="my_device_info_header"
-            android:order="-997"
+            android:order="-996"
             android:layout="@layout/about_device_info"
             android:selectable="false"
             settings:isPreferenceVisible="false"/>
@@ -47,7 +55,7 @@
             android:key="MistOS_maintainer"
             android:title="@string/MistOS_maintainer"
             android:icon="@drawable/ic_mist_team"
-            android:order="-996"
+            android:order="-995"
             android:summary="@string/summary_placeholder"
             settings:layout="@layout/top_level_preference_solo_card_ayan"
             settings:enableCopying="true"
@@ -56,7 +64,7 @@
         <!-- Device name -->
         <com.android.settings.widget.ValidatedEditTextPreference
             android:key="device_name"
-            android:order="-995"
+            android:order="-994"
             android:icon="@drawable/ic_mist_device"
             android:title="@string/my_device_info_device_name_preference_title"
             android:summary="@string/summary_placeholder"

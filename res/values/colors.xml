@@ -219,4 +219,6 @@
     <!-- Switch bar disabled state color-->
     <color name="switch_bar_state_disabled_color">#1F1F1F1F</color>
     <color name="mist_cardview_color">@android:color/system_neutral1_10</color>
+
+    <color name="mist_pref_color">@android:color/system_neutral1_10</color>
 </resources>
