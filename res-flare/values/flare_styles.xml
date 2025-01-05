@@ -44,6 +44,12 @@
         <item name="android:background">@drawable/flare_preference_background_top</item>
     </style>
 
+    <style name="flarePreferenceSingle" parent="flarePreferenceBase">
+        <item name="android:layout_marginBottom">4dp</item>
+        <item name="android:layout_marginTop">4dp</item>
+        <item name="android:background">@drawable/flare_preference_background_single</item>
+    </style>
+
     <style name="flarePreferenceMiddle" parent="flarePreferenceBase">
         <item name="android:layout_marginBottom">2dp</item>
         <item name="android:background">@drawable/flare_preference_background_middle</item>
@@ -71,6 +77,10 @@
         <item name="android:layout_marginTop">@dimen/flare_pref_horizontal_padding</item>
     </style>
 
+    <style name="flareDashboardPreferenceSingle" parent="flarePreferenceSingle">
+        <item name="android:layout_marginTop">@dimen/flare_pref_horizontal_padding</item>
+    </style>
+
     <style name="flareDashboardPreferenceBottom" parent="flarePreferenceBottom">
         <item name="android:layout_marginBottom">0dp</item>
     </style>
@@ -95,5 +105,20 @@
     </style>
     <style name="text_style_base">
         <item name="android:breakStrategy">simple</item>
+    </style>
+
+    <style name="mistDashboardPreferenceSingle" parent="mistPreferenceSingle">
+        <item name="android:layout_marginBottom">0dp</item>
+    </style>
+
+    <style name="mistPreferenceSingle" parent="mistPreferenceBase">
+        <item name="android:layout_marginBottom">4dp</item>
+        <item name="android:background">@drawable/mist_preference_background_single</item>
+    </style>
+    
+    <style name="mistPreferenceBase">
+        <item name="android:layout_marginStart">@dimen/mist_pref_horizontal_padding</item>
+        <item name="android:layout_marginEnd">@dimen/mist_pref_horizontal_padding</item>
+        <item name="android:clipToPadding">false</item>
     </style>
 </resources>

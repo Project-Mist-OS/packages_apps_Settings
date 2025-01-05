@@ -23,13 +23,34 @@
         android:title="@string/flare_dashboard_device"
 	android:icon="@drawable/ic_settings_about_device"
         android:summary="@string/summary_placeholder"
-        settings:layout="@layout/flare_dashboard_preference_phone"
+        settings:layout="@layout/mist_dashboard_preference_phone"
         android:fragment="com.android.settings.deviceinfo.aboutphone.MyDeviceInfoFragment"
         settings:controller="com.android.settings.deviceinfo.aboutphone.TopLevelAboutDevicePreferenceController"/>
+
+    
+    <PreferenceCategory
+        android:order="-204"
+        android:key="top_level_mistify_category"
+        android:title="@string/top_level_mistify"
+        android:layout="@layout/mist_first_header_pref">
+
+        <com.android.settings.widget.HomepagePreference
+            android:fragment="com.rising.settings.PersonalizationsFragment"
+            android:icon="@drawable/ic_settings_cogs"
+            android:key="top_level_personalizations"
+            android:order="203"
+            android:title="@string/rising_settings_title"
+            settings:layout="@layout/flare_dashboard_preference_phone"
+            android:summary="@string/rising_settings_summary"
+            settings:controller="com.rising.settings.TopLevelSettingsPreferenceController"/>
+
+    </PreferenceCategory>
+
 
     <PreferenceCategory
         android:order="-200"
         android:selectable="false"
+        android:layout="@layout/mist_first_header_pref"
         android:title="@string/top_level_connectivity"
         settings:shouldDisableView="false"
         settings:enabled="false" />
@@ -57,6 +78,7 @@
     <PreferenceCategory
         android:order="-170"
         android:selectable="false"
+        android:layout="@layout/mist_first_header_pref"
         android:title="@string/top_level_personalize"
         settings:shouldDisableView="false"
         settings:enabled="false" />
@@ -120,6 +142,7 @@
     <PreferenceCategory
         android:order="-100"
         android:selectable="false"
+        android:layout="@layout/mist_first_header_pref"
         android:title="@string/top_level_security"
         settings:shouldDisableView="false"
         settings:enabled="false" />
@@ -175,6 +198,7 @@
     <PreferenceCategory
         android:order="-90"
         android:selectable="false"
+       android:layout="@layout/mist_first_header_pref"
         android:title="@string/top_level_others"
         settings:shouldDisableView="false"
         settings:enabled="false" />

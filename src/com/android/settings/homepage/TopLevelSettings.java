@@ -224,6 +224,7 @@ public class TopLevelSettings extends DashboardFragment implements SplitLayoutLi
             if (isValid && pref.getLayoutResource() != R.layout.flare_dashboard_preference_top && 
                 pref.getLayoutResource() != R.layout.flare_dashboard_preference_full && 
                 pref.getLayoutResource() != R.layout.flare_dashboard_preference_phone && 
+                pref.getLayoutResource() != R.layout.mist_dashboard_preference_phone && 
                 pref.getLayoutResource() != R.layout.flare_dashboard_preference_bottom) {
                 pref.setLayoutResource(R.layout.flare_dashboard_preference_middle);
             }
