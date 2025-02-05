@@ -72,6 +72,17 @@
             settings:controller="com.android.settings.deviceinfo.DeviceNamePreferenceController"
             settings:enableCopying="true"/>
 
+    <!-- Android version -->
+        <Preference
+            android:key="firmware_version"
+            android:order="-993"
+            android:title="@string/firmware_version"
+            android:icon="@drawable/ic_android_about"
+            settings:layout="@layout/top_level_preference_solo_card_ayan"
+            android:summary="@string/summary_placeholder"
+            android:fragment="com.android.settings.deviceinfo.firmwareversion.FirmwareVersionSettings"
+            settings:controller="com.android.settings.deviceinfo.firmwareversion.FirmwareVersionPreferenceController"/>
+
     <PreferenceCategory
         android:key="basic_info_category"
         android:selectable="false"
@@ -180,15 +191,6 @@
             settings:enableCopying="true"
             settings:isPreferenceVisible="@bool/config_show_sim_info"
             settings:controller="com.android.settings.deviceinfo.imei.ImeiInfoPreferenceController"/>
-
-        <!-- Android version -->
-        <Preference
-            android:key="firmware_version"
-            android:order="42"
-            android:title="@string/firmware_version"
-            android:summary="@string/summary_placeholder"
-            android:fragment="com.android.settings.deviceinfo.firmwareversion.FirmwareVersionSettings"
-            settings:controller="com.android.settings.deviceinfo.firmwareversion.FirmwareVersionPreferenceController"/>
 
     </PreferenceCategory>
 
