@@ -32,7 +32,7 @@ public class MistVersionPreferenceController extends BasePreferenceController {
         String mistVersion = SystemProperties.get(MIST_VERSION_PROPERTY);
         String mistCodename = SystemProperties.get(MIST_CODENAME_PROPERTY);
         String mistPackages = SystemProperties.get(MIST_PACKAGES);
-        if (!mistVersion.isEmpty() && !mistCodename.isEmpty() && !mistPackages()) {
+        if (!mistVersion.isEmpty() && !mistCodename.isEmpty() && !mistPackages.isEmpty()) {
             return mistVersion + " | " + mistCodename + " | " + mistPackages;
         } else {
             return
