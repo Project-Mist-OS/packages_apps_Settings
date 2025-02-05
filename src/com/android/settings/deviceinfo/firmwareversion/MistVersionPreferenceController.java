@@ -15,6 +15,7 @@ public class MistVersionPreferenceController extends BasePreferenceController {
     @VisibleForTesting
     static final String MIST_VERSION_PROPERTY = "ro.mist.version";
     static final String MIST_CODENAME_PROPERTY = "ro.mist.code";
+    static final String MIST_PACKAGES = "ro.mist.packagetype";
 
     public MistVersionPreferenceController(Context context, String preferenceKey) {
         super(context, preferenceKey);
@@ -22,7 +23,7 @@ public class MistVersionPreferenceController extends BasePreferenceController {
 
     @Override
     public int getAvailabilityStatus() {
-        return !TextUtils.isEmpty(SystemProperties.get(MIST_VERSION_PROPERTY)) && !TextUtils.isEmpty(SystemProperties.get(MIST_CODENAME_PROPERTY))
+        return !TextUtils.isEmpty(SystemProperties.get(MIST_VERSION_PROPERTY)) && !TextUtils.isEmpty(SystemProperties.get(MIST_CODENAME_PROPERTY)) && !TextUtils.isEmpty(SystemProperties.get(MIST_PACKAGES))
                 ? AVAILABLE : UNSUPPORTED_ON_DEVICE;
     }
 
@@ -30,8 +31,9 @@ public class MistVersionPreferenceController extends BasePreferenceController {
     public CharSequence getSummary() {
         String mistVersion = SystemProperties.get(MIST_VERSION_PROPERTY);
         String mistCodename = SystemProperties.get(MIST_CODENAME_PROPERTY);
-        if (!mistVersion.isEmpty() && !mistCodename.isEmpty()) {
-            return mistVersion + " | " + mistCodename;
+        String mistPackages = SystemProperties.get(MIST_PACKAGES);
+        if (!mistVersion.isEmpty() && !mistCodename.isEmpty() && !mistPackages()) {
+            return mistVersion + " | " + mistCodename + " | " + mistPackages;
         } else {
             return
                 mContext.getString(R.string.device_info_default);
